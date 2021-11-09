@@ -20,7 +20,7 @@
     "@aws-cdk/aws-lambda": "^1.131.0",
     "@aws-cdk/aws-lambda-nodejs": "^1.131.0",
     "@aws-cdk/core": "^1.131.0",
-    "@types/jest": "^26.0.10",
+    "@types/jest": "^27.0.2",
     "@types/node": "10.17.27",
     "aws-cdk": "^1.131.0",
     "esbuild": "^0.13.12",
