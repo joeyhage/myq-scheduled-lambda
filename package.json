@@ -1,0 +1,37 @@
+{
+  "name": "myq-door-closer",
+  "version": "0.1.0",
+  "bin": {
+    "myq-door-closer": "bin/myq-door-closer.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc -w",
+    "pretest": "npm run build",
+    "test": "jest",
+    "cdk": "cdk",
+    "predeploy": "npm run build",
+    "deploy": "cdk deploy"
+  },
+  "devDependencies": {
+    "@aws-cdk/assertions": "^1.131.0",
+    "@aws-cdk/aws-events": "^1.131.0",
+    "@aws-cdk/aws-events-targets": "^1.131.0",
+    "@aws-cdk/aws-lambda": "^1.131.0",
+    "@aws-cdk/aws-lambda-nodejs": "^1.131.0",
+    "@aws-cdk/core": "^1.131.0",
+    "@types/jest": "^26.0.10",
+    "@types/node": "10.17.27",
+    "aws-cdk": "^1.131.0",
+    "esbuild": "^0.13.12",
+    "jest": "^26.4.2",
+    "ts-jest": "^26.2.0",
+    "ts-node": "^9.0.0",
+    "typescript": "~3.9.7"
+  },
+  "dependencies": {
+    "@hjdhjd/myq": "^6.0.4",
+    "aws-sdk": "^2.1023.0",
+    "source-map-support": "^0.5.16"
+  }
+}
