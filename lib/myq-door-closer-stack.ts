@@ -2,8 +2,9 @@ import * as events from "@aws-cdk/aws-events";
 import * as targets from "@aws-cdk/aws-events-targets";
 import { Runtime } from "@aws-cdk/aws-lambda";
 import * as lambda from "@aws-cdk/aws-lambda-nodejs";
-import { SourceMapMode } from "@aws-cdk/aws-lambda-nodejs";
+import * as secretsmanager from "@aws-cdk/aws-secretsmanager";
 import * as cdk from "@aws-cdk/core";
+import * as iam from "@aws-cdk/aws-iam";
 import * as path from "path";
 
 export class MyqDoorCloserStack extends cdk.Stack {
@@ -16,15 +17,14 @@ export class MyqDoorCloserStack extends cdk.Stack {
       bundling: {
         minify: true,
         sourceMap: true,
-        sourceMapMode: SourceMapMode.INLINE,
+        sourceMapMode: lambda.SourceMapMode.INLINE,
         target: "es2018",
         externalModules: ["aws-sdk"],
       },
-      environment: {
-        USERNAME: process.env.MYQ_USERNAME!,
-        PASSWORD: process.env.MYQ_PASSWORD!,
-      }
     });
+
+    const secret = secretsmanager.Secret.fromSecretNameV2(this, "MyQLogin", "live/myq-door-closer/myq");
+    secret.grantRead(fn.role as iam.IGrantable);
 
     const eventRule = new events.Rule(this, "LambdaScheduleRule", {
       ruleName: "myq-check-hourly",

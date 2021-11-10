@@ -29,6 +29,3 @@ jobs:
         run: |
           npm ci
           npm run deploy -- --require-approval never --progress events
-        env:
-          MYQ_USERNAME: ${{ secrets.MYQ_USERNAME }}
-          MYQ_PASSWORD: ${{ secrets.MYQ_PASSWORD }}
