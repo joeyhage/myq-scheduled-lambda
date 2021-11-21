@@ -34,6 +34,7 @@
   "dependencies": {
     "@hjdhjd/myq": "^6.0.4",
     "aws-sdk": "^2.1026.0",
+    "axios": "^0.24.0",
     "source-map-support": "^0.5.20"
   }
 }
