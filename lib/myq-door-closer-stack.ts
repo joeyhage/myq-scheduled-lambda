@@ -26,6 +26,7 @@ export class MyqDoorCloserStack extends cdk.Stack {
       environment: {
         OPEN_THRESHOLD_HRS: "1",
         SECRET_NAME: secretName,
+        TIMEZONE: "America/Chicago", // IANA Timezone name
       },
     });
 
