@@ -14,18 +14,18 @@
     "deploy": "cdk deploy"
   },
   "devDependencies": {
-    "@aws-cdk/assertions": "^1.132.0",
-    "@aws-cdk/aws-events": "^1.132.0",
-    "@aws-cdk/aws-events-targets": "^1.132.0",
-    "@aws-cdk/aws-iam": "^1.132.0",
-    "@aws-cdk/aws-lambda": "^1.132.0",
-    "@aws-cdk/aws-lambda-nodejs": "^1.132.0",
-    "@aws-cdk/aws-ssm": "^1.132.0",
-    "@aws-cdk/core": "^1.132.0",
-    "@types/jest": "^27.0.2",
-    "@types/node": "^14.17.33",
-    "aws-cdk": "^1.132.0",
-    "esbuild": "^0.13.13",
+    "@aws-cdk/assertions": "^1.133.0",
+    "@aws-cdk/aws-events": "^1.133.0",
+    "@aws-cdk/aws-events-targets": "^1.133.0",
+    "@aws-cdk/aws-iam": "^1.133.0",
+    "@aws-cdk/aws-lambda": "^1.133.0",
+    "@aws-cdk/aws-lambda-nodejs": "^1.133.0",
+    "@aws-cdk/aws-ssm": "^1.133.0",
+    "@aws-cdk/core": "^1.133.0",
+    "@types/jest": "^27.0.3",
+    "@types/node": "^14.17.34",
+    "aws-cdk": "^1.133.0",
+    "esbuild": "^0.13.15",
     "jest": "^27.3.1",
     "ts-jest": "^27.0.7",
     "ts-node": "^9.1.1",
@@ -33,8 +33,8 @@
   },
   "dependencies": {
     "@hjdhjd/myq": "^6.0.4",
-    "aws-sdk": "^2.1026.0",
+    "aws-sdk": "^2.1033.0",
     "axios": "^0.24.0",
-    "source-map-support": "^0.5.20"
+    "source-map-support": "^0.5.21"
   }
 }
