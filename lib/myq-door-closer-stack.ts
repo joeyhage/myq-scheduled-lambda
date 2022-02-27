@@ -1,14 +1,15 @@
-import * as events from "@aws-cdk/aws-events";
-import * as targets from "@aws-cdk/aws-events-targets";
-import { Runtime } from "@aws-cdk/aws-lambda";
-import * as lambda from "@aws-cdk/aws-lambda-nodejs";
-import * as ssm from "@aws-cdk/aws-ssm";
-import * as cdk from "@aws-cdk/core";
-import * as iam from "@aws-cdk/aws-iam";
+import * as events from "aws-cdk-lib/aws-events";
+import * as targets from "aws-cdk-lib/aws-events-targets";
+import * as iam from "aws-cdk-lib/aws-iam";
+import { Runtime } from "aws-cdk-lib/aws-lambda";
+import * as lambda from "aws-cdk-lib/aws-lambda-nodejs";
+import * as ssm from "aws-cdk-lib/aws-ssm";
+import * as cdk from "aws-cdk-lib/core";
+import { Construct } from "constructs";
 import * as path from "path";
 
 export class MyqDoorCloserStack extends cdk.Stack {
-  constructor(scope: cdk.Construct, id: string, props?: cdk.StackProps) {
+  constructor(scope: Construct, id: string, props?: cdk.StackProps) {
     super(scope, id, props);
 
     const secretName = "/live/myq-door-closer/myq";
