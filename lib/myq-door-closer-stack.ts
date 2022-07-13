@@ -1,4 +1,5 @@
 import * as cdk from "aws-cdk-lib";
+import { Duration } from "aws-cdk-lib";
 import * as events from "aws-cdk-lib/aws-events";
 import * as targets from "aws-cdk-lib/aws-events-targets";
 import * as iam from "aws-cdk-lib/aws-iam";
@@ -29,6 +30,7 @@ export class MyqDoorCloserStack extends cdk.Stack {
         SECRET_NAME: secretName,
         TIMEZONE: "America/Chicago", // IANA Timezone name
       },
+      timeout: Duration.seconds(15),
     });
 
     const parameter = ssm.StringParameter.fromSecureStringParameterAttributes(

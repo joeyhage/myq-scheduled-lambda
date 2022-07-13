@@ -11,6 +11,15 @@ export const handler = async (): Promise<void> => {
   const { username, password, webhookUrl } = JSON.parse(
     Parameter?.Value || "{}"
   );
+  await handleMyQRequests(username, password, webhookUrl);
+};
+
+async function handleMyQRequests(
+  username: string,
+  password: string,
+  webhookUrl: string,
+  attempt = 1
+): Promise<void> {
   try {
     const myQ = new myQApi(username, password);
     await myQ.refreshDevices();
@@ -47,14 +56,18 @@ export const handler = async (): Promise<void> => {
     );
   } catch (e) {
     console.error("Uncaught exception", e);
-    await sendNotification(
-      webhookUrl,
-      `An error occurred with the my queue garage door closer at ${formatDate(
-        new Date()
-      )}`
-    );
+    if (attempt < 2) {
+      await handleMyQRequests(username, password, webhookUrl, attempt + 1);
+    } else {
+      await sendNotification(
+        webhookUrl,
+        `An error occurred with the my queue garage door closer at ${formatDate(
+          new Date()
+        )}`
+      );
+    }
   }
-};
+}
 
 async function sendNotification(
   webhookUrl: string,
