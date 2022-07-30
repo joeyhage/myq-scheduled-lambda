@@ -30,7 +30,7 @@ async function handleMyQRequests(
     );
 
     await Promise.all(
-      myQ.devices
+      (myQ.devices || [])
         .filter((device) => device.device_family === "garagedoor")
         .filter((device) => device.state.door_state.toLowerCase() === "open")
         .filter((device) => {
