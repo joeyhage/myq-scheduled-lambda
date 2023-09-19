@@ -21,7 +21,8 @@ async function handleMyQRequests(
   attempt = 1
 ): Promise<void> {
   try {
-    const myQ = new myQApi(username, password);
+    const myQ = new myQApi();
+    await myQ.login(username, password);
     await myQ.refreshDevices();
 
     const thresholdTime = new Date();
