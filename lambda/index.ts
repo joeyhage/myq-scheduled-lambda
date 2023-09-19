@@ -1,6 +1,5 @@
-import { myQApi } from "@hjdhjd/myq";
 import { SSM } from "aws-sdk";
-import axios from "axios";
+import { Axios } from "axios";
 
 export const handler = async (): Promise<void> => {
   const { Parameter } = await new SSM({
@@ -21,8 +20,9 @@ async function handleMyQRequests(
   attempt = 1
 ): Promise<void> {
   try {
+    const { myQApi } = await import("@hjdhjd/myq");
     const myQ = new myQApi();
-    await myQ.login(username, password);
+    await myQ.login(username, password)
     await myQ.refreshDevices();
 
     const thresholdTime = new Date();
@@ -74,7 +74,7 @@ async function sendNotification(
   webhookUrl: string,
   message: string
 ): Promise<void> {
-  await axios.get(`${webhookUrl}&notification=${encodeURIComponent(message)}`);
+  await new Axios().get(`${webhookUrl}&notification=${encodeURIComponent(message)}`);
 }
 
 function formatDate(date: Date): string {
