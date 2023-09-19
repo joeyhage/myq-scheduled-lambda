@@ -1,6 +1,6 @@
 {
   "name": "myq-door-closer",
-  "version": "1.0.12",
+  "version": "1.0.13",
   "bin": {
     "myq-door-closer": "bin/myq-door-closer.js"
   },
