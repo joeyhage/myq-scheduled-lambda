@@ -4,6 +4,7 @@
   "bin": {
     "myq-door-closer": "bin/myq-door-closer.js"
   },
+  "type": "module",
   "scripts": {
     "build": "tsc",
     "watch": "tsc -w",
