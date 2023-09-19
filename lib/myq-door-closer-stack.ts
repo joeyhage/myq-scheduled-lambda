@@ -22,7 +22,7 @@ export class MyqDoorCloserStack extends cdk.Stack {
         minify: true,
         sourceMap: true,
         sourceMapMode: lambda.SourceMapMode.INLINE,
-        target: "es2018",
+        target: "ES2022",
         externalModules: ["aws-sdk"],
       },
       environment: {
