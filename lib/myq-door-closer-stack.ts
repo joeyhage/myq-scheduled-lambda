@@ -16,7 +16,7 @@ export class MyqDoorCloserStack extends cdk.Stack {
     const secretName = "/live/myq-door-closer/myq";
 
     const fn = new lambda.NodejsFunction(this, "MyQCloserLambda", {
-      runtime: Runtime.NODEJS_14_X,
+      runtime: Runtime.NODEJS_18_X,
       entry: path.resolve(__dirname, "../lambda/index.ts"),
       bundling: {
         minify: true,
